@@ -14,6 +14,7 @@
 		3F4952261D80A9A4008A6820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4952241D80A9A4008A6820 /* LaunchScreen.storyboard */; };
 		3F4952301D80B470008A6820 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49522F1D80B470008A6820 /* QuoteViewController.swift */; };
 		3F4952381D821BB6008A6820 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4952371D821BB6008A6820 /* TopicsViewController.swift */; };
+		3F49523A1D8223CC008A6820 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4952391D8223CC008A6820 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3F4952271D80A9A4008A6820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F49522F1D80B470008A6820 /* QuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		3F4952371D821BB6008A6820 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
+		3F4952391D8223CC008A6820 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3F49521F1D80A9A4008A6820 /* Main.storyboard */,
 				3F49522F1D80B470008A6820 /* QuoteViewController.swift */,
 				3F4952371D821BB6008A6820 /* TopicsViewController.swift */,
+				3F4952391D8223CC008A6820 /* SettingsViewController.swift */,
 				3F4952221D80A9A4008A6820 /* Assets.xcassets */,
 				3F4952241D80A9A4008A6820 /* LaunchScreen.storyboard */,
 				3F4952271D80A9A4008A6820 /* Info.plist */,
@@ -144,6 +147,7 @@
 				3F4952301D80B470008A6820 /* QuoteViewController.swift in Sources */,
 				3F49521E1D80A9A4008A6820 /* ViewController.swift in Sources */,
 				3F4952381D821BB6008A6820 /* TopicsViewController.swift in Sources */,
+				3F49523A1D8223CC008A6820 /* SettingsViewController.swift in Sources */,
 				3F49521C1D80A9A4008A6820 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
