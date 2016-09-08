@@ -12,6 +12,7 @@
 		3F4952211D80A9A4008A6820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49521F1D80A9A4008A6820 /* Main.storyboard */; };
 		3F4952231D80A9A4008A6820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4952221D80A9A4008A6820 /* Assets.xcassets */; };
 		3F4952261D80A9A4008A6820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4952241D80A9A4008A6820 /* LaunchScreen.storyboard */; };
+		3F4952301D80B470008A6820 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49522F1D80B470008A6820 /* QuoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3F4952221D80A9A4008A6820 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F4952251D80A9A4008A6820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F4952271D80A9A4008A6820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F49522F1D80B470008A6820 /* QuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				3F49521B1D80A9A4008A6820 /* AppDelegate.swift */,
 				3F49521D1D80A9A4008A6820 /* ViewController.swift */,
 				3F49521F1D80A9A4008A6820 /* Main.storyboard */,
+				3F49522F1D80B470008A6820 /* QuoteViewController.swift */,
 				3F4952221D80A9A4008A6820 /* Assets.xcassets */,
 				3F4952241D80A9A4008A6820 /* LaunchScreen.storyboard */,
 				3F4952271D80A9A4008A6820 /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4952301D80B470008A6820 /* QuoteViewController.swift in Sources */,
 				3F49521E1D80A9A4008A6820 /* ViewController.swift in Sources */,
 				3F49521C1D80A9A4008A6820 /* AppDelegate.swift in Sources */,
 			);
