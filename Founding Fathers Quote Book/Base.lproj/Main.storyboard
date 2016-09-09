@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoundingFathersSquare" translatesAutoresizingMaskIntoConstraints="NO" id="oVJ-Tf-TJ3"/>
@@ -75,18 +75,18 @@
         <scene sceneID="KFD-1w-Lxy">
             <objects>
                 <tableViewController title="Settings" id="kK4-sN-hCg" customClass="SettingsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="VBV-Dn-zQW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="VBV-Dn-zQW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="seY-Mb-UPd">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kqe-rm-MeJ">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="kqe-rm-MeJ">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kqe-rm-MeJ" id="6qq-Vb-g9r">
-                                            <frame key="frameInset" width="320" height="59"/>
+                                            <frame key="frameInset" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Notify me of the quote of the day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-vy-Eyf">
@@ -98,22 +98,26 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9P-Vg-4UT"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9P-Vg-4UT">
+                                                    <connections>
+                                                        <action selector="toggleNotifications:" destination="kK4-sN-hCg" eventType="valueChanged" id="TMf-zj-Ja9"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0Sf-vy-Eyf" firstAttribute="centerY" secondItem="V9P-Vg-4UT" secondAttribute="centerY" id="8AO-9G-eyl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="V9P-Vg-4UT" secondAttribute="trailing" id="f9z-0L-4TN"/>
                                                 <constraint firstItem="V9P-Vg-4UT" firstAttribute="centerY" secondItem="6qq-Vb-g9r" secondAttribute="centerY" id="kyn-5Z-vAc"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="0Sf-vy-Eyf" secondAttribute="leading" id="nKZ-Xo-2Gm"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="0Sf-vy-Eyf" secondAttribute="leading" constant="-12" id="nKZ-Xo-2Gm"/>
                                                 <constraint firstItem="V9P-Vg-4UT" firstAttribute="leading" secondItem="0Sf-vy-Eyf" secondAttribute="trailing" constant="8" id="pfI-VW-iTG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="SAV-FS-CcQ">
-                                        <rect key="frame" x="0.0" y="124" width="320" height="216"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="216" id="SAV-FS-CcQ">
+                                        <rect key="frame" x="0.0" y="124" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SAV-FS-CcQ" id="NIV-67-G5o">
-                                            <frame key="frameInset" width="320" height="215"/>
+                                            <frame key="frameInset" width="375" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZ7-kA-d1P">
@@ -131,11 +135,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HzK-8P-zww">
-                                        <rect key="frame" x="0.0" y="340" width="320" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="HzK-8P-zww">
+                                        <rect key="frame" x="0.0" y="340" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HzK-8P-zww" id="vNc-zG-iQQ">
-                                            <frame key="frameInset" width="320" height="59"/>
+                                            <frame key="frameInset" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqE-bN-6FW">
@@ -145,54 +149,75 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="hZ1-rA-pYg"/>
                                                     </constraints>
                                                     <state key="normal" title="S"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="aKh-MZ-fDm"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7J-hJ-Qri">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7J-hJ-Qri">
                                                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="GEu-1h-Xau"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="tQb-nN-IXu"/>
                                                     </constraints>
                                                     <state key="normal" title="M"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="fQE-TV-bmm"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmE-Tb-WDG">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmE-Tb-WDG">
                                                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="U8L-rz-mB8"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="szT-ZE-q5h"/>
                                                     </constraints>
                                                     <state key="normal" title="T"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="YBR-fo-eNh"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRU-yH-hId">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRU-yH-hId">
                                                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="JV9-YI-xss"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="OJY-BW-zul"/>
                                                     </constraints>
                                                     <state key="normal" title="W"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="5Kg-Fz-4Q0"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqR-A6-ZcM">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqR-A6-ZcM">
                                                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="HJ1-4A-aQf"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="iyX-fX-ULO"/>
                                                     </constraints>
                                                     <state key="normal" title="T"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="4hz-ZY-bHO"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIR-Pe-Idh">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIR-Pe-Idh">
                                                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="dsf-nv-alv"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="hDQ-iQ-hTg"/>
                                                     </constraints>
                                                     <state key="normal" title="F"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="y3y-vc-Sqf"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fva-5M-HNM">
+                                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fva-5M-HNM">
                                                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="OMD-uH-gGO"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="bvl-aN-LOg"/>
                                                     </constraints>
                                                     <state key="normal" title="S"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="5uj-lo-kgz"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -221,10 +246,21 @@
                             <outlet property="delegate" destination="kK4-sN-hCg" id="gcA-VU-fh8"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="notificationsSwitch" destination="V9P-Vg-4UT" id="T2e-mT-wZe"/>
+                        <outlet property="pickerView" destination="CZ7-kA-d1P" id="qWk-GA-L8u"/>
+                        <outletCollection property="dayButtons" destination="dqE-bN-6FW" collectionClass="NSMutableArray" id="OeA-2K-7kY"/>
+                        <outletCollection property="dayButtons" destination="O7J-hJ-Qri" collectionClass="NSMutableArray" id="Ntw-rE-0Wm"/>
+                        <outletCollection property="dayButtons" destination="tmE-Tb-WDG" collectionClass="NSMutableArray" id="j83-fK-IPp"/>
+                        <outletCollection property="dayButtons" destination="NRU-yH-hId" collectionClass="NSMutableArray" id="o2z-tM-J7S"/>
+                        <outletCollection property="dayButtons" destination="jqR-A6-ZcM" collectionClass="NSMutableArray" id="sWE-se-YYq"/>
+                        <outletCollection property="dayButtons" destination="YIR-Pe-Idh" collectionClass="NSMutableArray" id="PYi-tc-5dn"/>
+                        <outletCollection property="dayButtons" destination="Fva-5M-HNM" collectionClass="NSMutableArray" id="gWf-IY-BDR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThA-nd-D6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1853" y="389"/>
+            <point key="canvasLocation" x="1877" y="389"/>
         </scene>
         <!--Quote of the Day-->
         <scene sceneID="gq6-l8-235">
@@ -235,7 +271,7 @@
                         <viewControllerLayoutGuide type="bottom" id="W9f-pZ-7B4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Z0-Rs-L6k">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGs-Jg-xl3">
@@ -256,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5UD-Io-Kxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="1172"/>
+            <point key="canvasLocation" x="1877" y="1195"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IRm-IL-Hbj">
@@ -281,19 +317,19 @@
             <objects>
                 <tableViewController title="Topics" id="qLd-mw-wVF" customClass="TopicsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kd9-hR-mQ6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicCell" textLabel="Qai-4u-xtj" style="IBUITableViewCellStyleDefault" id="9Ga-Wt-RIp">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ga-Wt-RIp" id="TaU-zn-qcc">
-                                    <frame key="frameInset" width="287" height="43"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qai-4u-xtj">
-                                            <frame key="frameInset" minX="15" width="270" height="43"/>
+                                            <frame key="frameInset" minX="15" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -315,13 +351,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6J-np-O7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="1172"/>
+            <point key="canvasLocation" x="1151" y="1195"/>
         </scene>
     </scenes>
     <resources>
         <image name="FoundingFathersSquare" width="799" height="799"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Erv-uA-yCH"/>
+        <segue reference="85a-SM-3Mw"/>
     </inferredMetricsTieBreakers>
 </document>
