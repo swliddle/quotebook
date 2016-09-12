@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3F419B1D8359BE0067BDB3 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F419A1D8359BE0067BDB3 /* Quote.swift */; };
+		3F3F419D1D835F760067BDB3 /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F419C1D835F760067BDB3 /* QuoteDeck.swift */; };
 		3F49521C1D80A9A4008A6820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49521B1D80A9A4008A6820 /* AppDelegate.swift */; };
 		3F49521E1D80A9A4008A6820 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49521D1D80A9A4008A6820 /* ViewController.swift */; };
 		3F4952211D80A9A4008A6820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49521F1D80A9A4008A6820 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F3F419A1D8359BE0067BDB3 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		3F3F419C1D835F760067BDB3 /* QuoteDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
 		3F4952181D80A9A4008A6820 /* Founding Fathers Quote Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Founding Fathers Quote Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F49521B1D80A9A4008A6820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F49521D1D80A9A4008A6820 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,10 +45,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F3F41961D8359480067BDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F3F419A1D8359BE0067BDB3 /* Quote.swift */,
+				3F3F419C1D835F760067BDB3 /* QuoteDeck.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3F3F41971D83594E0067BDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F49521F1D80A9A4008A6820 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3F3F41981D8359530067BDB3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F49522F1D80B470008A6820 /* QuoteViewController.swift */,
+				3F4952391D8223CC008A6820 /* SettingsViewController.swift */,
+				3F4952371D821BB6008A6820 /* TopicsViewController.swift */,
+				3F49521D1D80A9A4008A6820 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3F3F41991D83595A0067BDB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F49521B1D80A9A4008A6820 /* AppDelegate.swift */,
+				3F4952241D80A9A4008A6820 /* LaunchScreen.storyboard */,
+				3F4952271D80A9A4008A6820 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = "Founding Fathers Quote Book";
+			sourceTree = "<group>";
+		};
 		3F49520F1D80A9A4008A6820 = {
 			isa = PBXGroup;
 			children = (
 				3F49521A1D80A9A4008A6820 /* Founding Fathers Quote Book */,
+				3F3F41991D83595A0067BDB3 /* Supporting Files */,
 				3F4952191D80A9A4008A6820 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,15 +104,10 @@
 		3F49521A1D80A9A4008A6820 /* Founding Fathers Quote Book */ = {
 			isa = PBXGroup;
 			children = (
-				3F49521B1D80A9A4008A6820 /* AppDelegate.swift */,
-				3F49521D1D80A9A4008A6820 /* ViewController.swift */,
-				3F49521F1D80A9A4008A6820 /* Main.storyboard */,
-				3F49522F1D80B470008A6820 /* QuoteViewController.swift */,
-				3F4952371D821BB6008A6820 /* TopicsViewController.swift */,
-				3F4952391D8223CC008A6820 /* SettingsViewController.swift */,
+				3F3F41961D8359480067BDB3 /* Model */,
+				3F3F41971D83594E0067BDB3 /* View */,
+				3F3F41981D8359530067BDB3 /* Controller */,
 				3F4952221D80A9A4008A6820 /* Assets.xcassets */,
-				3F4952241D80A9A4008A6820 /* LaunchScreen.storyboard */,
-				3F4952271D80A9A4008A6820 /* Info.plist */,
 			);
 			path = "Founding Fathers Quote Book";
 			sourceTree = "<group>";
@@ -105,6 +144,7 @@
 				TargetAttributes = {
 					3F4952171D80A9A4008A6820 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KFPSLPBU25;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -147,9 +187,11 @@
 			files = (
 				3F4952301D80B470008A6820 /* QuoteViewController.swift in Sources */,
 				3F49521E1D80A9A4008A6820 /* ViewController.swift in Sources */,
+				3F3F419B1D8359BE0067BDB3 /* Quote.swift in Sources */,
 				3F4952381D821BB6008A6820 /* TopicsViewController.swift in Sources */,
 				3F49523A1D8223CC008A6820 /* SettingsViewController.swift in Sources */,
 				3F49521C1D80A9A4008A6820 /* AppDelegate.swift in Sources */,
+				3F3F419D1D835F760067BDB3 /* QuoteDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +311,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KFPSLPBU25;
 				INFOPLIST_FILE = "Founding Fathers Quote Book/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.byu.is543.Founding-Fathers-Quote-Book";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,7 +325,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KFPSLPBU25;
 				INFOPLIST_FILE = "Founding Fathers Quote Book/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.byu.is543.Founding-Fathers-Quote-Book";
 				PRODUCT_NAME = "$(TARGET_NAME)";
