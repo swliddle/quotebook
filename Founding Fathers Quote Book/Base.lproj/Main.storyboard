@@ -10,7 +10,7 @@
         <!--Founding Fathers Quote Book-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -294,10 +294,10 @@
             </objects>
             <point key="canvasLocation" x="1877" y="1195"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Rotating Navigation Controller-->
         <scene sceneID="IRm-IL-Hbj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JF8-Rd-xFS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JF8-Rd-xFS" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p0L-iv-a7p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -358,6 +358,6 @@
         <image name="FoundingFathersSquare" width="799" height="799"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="85a-SM-3Mw"/>
+        <segue reference="Erv-uA-yCH"/>
     </inferredMetricsTieBreakers>
 </document>
