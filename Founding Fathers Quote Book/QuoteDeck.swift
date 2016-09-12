@@ -41,7 +41,13 @@ class QuoteDeck {
               tags: [ "attitude", "achieving", "goal" ])
     ]
 
-    func update() {
+    static let sharedInstance = QuoteDeck()
+    
+    private init() {
+        update()
+    }
+
+    private func update() {
         for quote in quotes {
             for tag in quote.tags {
                 if !tagSet.contains(tag) {
