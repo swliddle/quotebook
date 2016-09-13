@@ -276,6 +276,11 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGs-Jg-xl3">
                                 <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mVB-BR-qhy" appends="YES" id="Wdk-vf-66r"/>
+                                    <outletCollection property="gestureRecognizers" destination="MQp-8r-Ckx" appends="YES" id="43D-kp-Xlo"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -291,6 +296,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5UD-Io-Kxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="mVB-BR-qhy">
+                    <connections>
+                        <action selector="swipe:" destination="HmX-TE-KH2" id="4XD-s6-7HL"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="MQp-8r-Ckx">
+                    <connections>
+                        <action selector="swipe:" destination="HmX-TE-KH2" id="nPv-Az-XD8"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1877" y="1195"/>
         </scene>
