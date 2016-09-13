@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3F3F419B1D8359BE0067BDB3 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F419A1D8359BE0067BDB3 /* Quote.swift */; };
 		3F3F419D1D835F760067BDB3 /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F419C1D835F760067BDB3 /* QuoteDeck.swift */; };
-		3F3F41A11D8730EF0067BDB3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F41A01D8730EF0067BDB3 /* HomeViewController.swift */; };
 		3F3F41A31D8731950067BDB3 /* RotatingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F41A21D8731950067BDB3 /* RotatingNavigationController.swift */; };
 		3F49521C1D80A9A4008A6820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49521B1D80A9A4008A6820 /* AppDelegate.swift */; };
 		3F4952211D80A9A4008A6820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F49521F1D80A9A4008A6820 /* Main.storyboard */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		3F3F419A1D8359BE0067BDB3 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		3F3F419C1D835F760067BDB3 /* QuoteDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
-		3F3F41A01D8730EF0067BDB3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3F3F41A21D8731950067BDB3 /* RotatingNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingNavigationController.swift; sourceTree = "<group>"; };
 		3F4952181D80A9A4008A6820 /* Founding Fathers Quote Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Founding Fathers Quote Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F49521B1D80A9A4008A6820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				3F3F41A21D8731950067BDB3 /* RotatingNavigationController.swift */,
 				3F4952391D8223CC008A6820 /* SettingsViewController.swift */,
 				3F4952371D821BB6008A6820 /* TopicsViewController.swift */,
-				3F3F41A01D8730EF0067BDB3 /* HomeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -194,7 +191,6 @@
 				3F49523A1D8223CC008A6820 /* SettingsViewController.swift in Sources */,
 				3F49521C1D80A9A4008A6820 /* AppDelegate.swift in Sources */,
 				3F3F41A31D8731950067BDB3 /* RotatingNavigationController.swift in Sources */,
-				3F3F41A11D8730EF0067BDB3 /* HomeViewController.swift in Sources */,
 				3F3F419D1D835F760067BDB3 /* QuoteDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

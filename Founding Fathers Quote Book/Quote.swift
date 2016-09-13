@@ -9,9 +9,14 @@
 import UIKit
 
 class Quote {
+    
+    // MARK: - Properties
+    
     var text: String
     var speaker: String
     var tags: [String]
+    
+    // MARK: - Initialization
     
     init(text: String, speaker: String, tags: [String]) {
         self.text = text

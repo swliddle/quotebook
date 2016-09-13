@@ -10,6 +10,13 @@ import UIKit
 
 class TopicsViewController : UITableViewController {
     
+    // MARK: - Constants
+    
+    struct Storyboard {
+        static let TopicCellIdentifier = "TopicCell"
+        static let ShowQuoteSegueIdentifier = "ShowQuote"
+    }
+    
     // MARK: - Properties
 
     var selectedTopic: String?
@@ -31,7 +38,7 @@ class TopicsViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.TopicCellIdentifier)!
         
         cell.textLabel?.text = quoteDeck.tagSet[indexPath.row].capitalized
         
@@ -42,6 +49,6 @@ class TopicsViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTopic = quoteDeck.tagSet[indexPath.row]
-        performSegue(withIdentifier: "ShowQuote", sender: self)
+        performSegue(withIdentifier: Storyboard.ShowQuoteSegueIdentifier, sender: self)
     }
 }

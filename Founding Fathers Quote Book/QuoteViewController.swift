@@ -45,7 +45,7 @@ class QuoteViewController : UIViewController {
     // MARK: - Actions
     
     @IBAction func swipe(_ sender: UISwipeGestureRecognizer) {
-        if sender.direction == UISwipeGestureRecognizerDirection.left {
+        if sender.direction == .left {
             currentQuoteIndex -= 1
             
             if currentQuoteIndex < 0 {
