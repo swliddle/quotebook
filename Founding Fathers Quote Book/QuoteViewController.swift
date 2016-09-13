@@ -16,16 +16,28 @@ class QuoteViewController : UIViewController {
     
     // MARK: - Properties
     
-    var quoteDate = Date()
-    
+    var currentQuoteIndex = 0
     var topic: String?
-    
-    let quoteDeck = QuoteDeck.sharedInstance
+    var quotes: [Quote]!
     
     // MARK: - View controller lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let selectedTopic = topic {
+            quotes = QuoteDeck.sharedInstance.quotesForTag(selectedTopic)
+            currentQuoteIndex = 0
+        } else {
+            let formatter = DateFormatter()
+            
+            formatter.dateFormat = "DDD"
+            quotes = QuoteDeck.sharedInstance.quotes
+            
+            if let dayInYear = Int(formatter.string(from: Date())) {
+                currentQuoteIndex = dayInYear % quotes.count
+            }
+        }
         
         updateUI()
     }
@@ -34,9 +46,17 @@ class QuoteViewController : UIViewController {
     
     @IBAction func swipe(_ sender: UISwipeGestureRecognizer) {
         if sender.direction == UISwipeGestureRecognizerDirection.left {
-            quoteDate = increment(date: quoteDate, by: -1)
+            currentQuoteIndex -= 1
+            
+            if currentQuoteIndex < 0 {
+                currentQuoteIndex = quotes.count - 1
+            }
         } else {
-            quoteDate = increment(date: quoteDate)
+            currentQuoteIndex += 1
+            
+            if currentQuoteIndex >= quotes.count {
+                currentQuoteIndex = 0
+            }
         }
 
         updateUI()
@@ -53,19 +73,12 @@ class QuoteViewController : UIViewController {
     }
 
     func updateUI() {
-        var quote: Quote?
+        let quote = quotes[currentQuoteIndex]
         
         if let topicFilter = topic {
-            title = topicFilter.capitalized
-            
-            quote = quoteDeck.quotesForTag(topicFilter).first
-            
-        } else {
-            quote = quoteDeck.quoteOfTheDay(for: quoteDate)
+            title = "\(topicFilter.capitalized) (\(currentQuoteIndex + 1) of \(quotes.count))"
         }
         
-        if let selectedQuote = quote {
-            webView.loadHTMLString("<!DOCTYPE html><html><head><title>Quote of the Day</title><style>body { padding: 2em; } .quote { font-size: 24pt; font-style: italic; } .speaker { padding-top: 1.5em; text-align: right; }</style></head><body><div class=\"quote\">\(selectedQuote.text)</div><div class=\"speaker\">&mdash; \(selectedQuote.speaker)</div></body></html>", baseURL: nil)
-        }
+        webView.loadHTMLString("<!DOCTYPE html><html><head><title>Quote of the Day</title><style>body { padding: 2em; } .quote { font-size: 24pt; font-style: italic; } .speaker { padding-top: 1.5em; text-align: right; }</style></head><body><div class=\"quote\">\(quote.text)</div><div class=\"speaker\">&mdash; \(quote.speaker)</div></body></html>", baseURL: nil)
     }
 }

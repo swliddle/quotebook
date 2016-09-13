@@ -59,18 +59,6 @@ class QuoteDeck {
         tagSet = tagSet.sorted()
     }
 
-    func quoteOfTheDay(for date: Date) -> Quote {
-        let formatter = DateFormatter()
-        
-        formatter.dateFormat = "DDD"
-        
-        if let dayInYear = Int(formatter.string(from: date)) {
-            return quotes[dayInYear % quotes.count]
-        }
-        
-        return quotes.first!
-    }
-    
     func quotesForTag(_ tag: String) -> [Quote] {
         var matchingQuotes: [Quote] = []
 
