@@ -35,6 +35,10 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         static let disabled = UIColor.clear
         static let enabled = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
     }
+    
+    private enum Settings: String {
+        case NotificationsOn, HourIndex, MinutesIndex, IsAm, NotifyDays
+    }
 
     // MARK: - Outlets
     
@@ -55,12 +59,38 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        restoreSettings()
+
         updateUI()
     }
 
     // MARK: - Helpers
     
-    func updateUI() {
+    private func restoreSettings() {
+        let defaults = UserDefaults.standard
+        
+        if let days = defaults.array(forKey: Settings.NotifyDays.rawValue) as? [Bool] {
+            notifyDays = days
+            notificationsOn = defaults.bool(forKey: Settings.NotificationsOn.rawValue)
+            hourIndex = defaults.integer(forKey: Settings.HourIndex.rawValue)
+            minutesIndex = defaults.integer(forKey: Settings.MinutesIndex.rawValue)
+            isAm = defaults.bool(forKey: Settings.IsAm.rawValue)
+        }
+    }
+    
+    private func saveSettings() {
+        let defaults = UserDefaults.standard
+        
+        defaults.set(notificationsOn, forKey: Settings.NotificationsOn.rawValue)
+        defaults.set(hourIndex, forKey: Settings.HourIndex.rawValue)
+        defaults.set(minutesIndex, forKey: Settings.MinutesIndex.rawValue)
+        defaults.set(isAm, forKey: Settings.IsAm.rawValue)
+        defaults.set(notifyDays, forKey: Settings.NotifyDays.rawValue)
+
+        defaults.synchronize()
+    }
+    
+    private func updateUI() {
         notificationsSwitch.setOn(notificationsOn, animated: false)
 
         pickerView.selectRow(hourIndex + Picker.WheelFactor * Picker.NumberOfHours,
@@ -78,11 +108,13 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     
     @IBAction func toggleNotifications(_ sender: UISwitch) {
         notificationsOn = sender.isOn
+        saveSettings()
     }
     
     @IBAction func toggleDay(_ sender: UIButton) {
         notifyDays[sender.tag] = !notifyDays[sender.tag]
         updateUI()
+        saveSettings()
     }
     
     // MARK: - Picker data source
@@ -119,15 +151,33 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     
     // MARK: - Picker delegate
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component != Component.AmPm {
-            let rowCount = component == Component.Hours ? Picker.NumberOfHours : Picker.NumberOfMinuteElements
-            if row < Picker.WheelFactor * rowCount || row >= (Picker.WheelFactor + 1) * rowCount {
+    private func indexForSelection(_ row: Int, inComponent component: Int) -> Int {
+        let rowCount = component == Component.Hours ? Picker.NumberOfHours : Picker.NumberOfMinuteElements
 
-                pickerView.selectRow(row % rowCount + Picker.WheelFactor * rowCount,
-                                     inComponent: component, animated: false)
-            }
+        if row < Picker.WheelFactor * rowCount || row >= (Picker.WheelFactor + 1) * rowCount {
+            pickerView.selectRow(row % rowCount + Picker.WheelFactor * rowCount,
+                                 inComponent: component, animated: false)
         }
+        
+        return row % rowCount
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch component {
+        case Component.Hours:
+            hourIndex = indexForSelection(row, inComponent: component)
+            break
+        case Component.Minutes:
+            minutesIndex = indexForSelection(row, inComponent: component)
+            break
+        case Component.AmPm:
+            isAm = row <= 0
+            break
+        default:
+            break
+        }
+
+        saveSettings()
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

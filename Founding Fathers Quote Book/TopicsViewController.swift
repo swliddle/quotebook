@@ -12,7 +12,7 @@ class TopicsViewController : UITableViewController {
     
     // MARK: - Constants
     
-    struct Storyboard {
+    private struct Storyboard {
         static let TopicCellIdentifier = "TopicCell"
         static let ShowQuoteSegueIdentifier = "ShowQuote"
     }
