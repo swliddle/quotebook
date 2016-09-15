@@ -10,7 +10,7 @@
         <!--Founding Fathers Quote Book-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -74,7 +74,7 @@
         <!--Settings-->
         <scene sceneID="KFD-1w-Lxy">
             <objects>
-                <tableViewController title="Settings" id="kK4-sN-hCg" customClass="SettingsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settingsVC" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kK4-sN-hCg" customClass="SettingsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="VBV-Dn-zQW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,7 +265,7 @@
         <!--Quote of the Day-->
         <scene sceneID="gq6-l8-235">
             <objects>
-                <viewController title="Quote of the Day" id="HmX-TE-KH2" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="quoteVC" title="Quote of the Day" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HmX-TE-KH2" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vWk-RO-jQg"/>
                         <viewControllerLayoutGuide type="bottom" id="W9f-pZ-7B4"/>
@@ -312,7 +312,7 @@
         <!--Rotating Navigation Controller-->
         <scene sceneID="IRm-IL-Hbj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JF8-Rd-xFS" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rotatingNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JF8-Rd-xFS" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p0L-iv-a7p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -330,7 +330,7 @@
         <!--Topics-->
         <scene sceneID="th6-li-1cO">
             <objects>
-                <tableViewController title="Topics" id="qLd-mw-wVF" customClass="TopicsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="topicsVC" title="Topics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qLd-mw-wVF" customClass="TopicsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kd9-hR-mQ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
