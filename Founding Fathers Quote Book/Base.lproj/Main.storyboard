@@ -38,7 +38,7 @@
                                 </constraints>
                                 <state key="normal" title="Quote of the Day"/>
                                 <connections>
-                                    <segue destination="HmX-TE-KH2" kind="show" id="Erv-uA-yCH"/>
+                                    <segue destination="HmX-TE-KH2" kind="show" identifier="ShowQuote" id="Erv-uA-yCH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELx-SP-H7I">

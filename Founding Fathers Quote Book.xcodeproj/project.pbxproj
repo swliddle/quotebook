@@ -17,6 +17,7 @@
 		3F4952301D80B470008A6820 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49522F1D80B470008A6820 /* QuoteViewController.swift */; };
 		3F4952381D821BB6008A6820 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4952371D821BB6008A6820 /* TopicsViewController.swift */; };
 		3F49523A1D8223CC008A6820 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4952391D8223CC008A6820 /* SettingsViewController.swift */; };
+		3FD85AE91D8AFDA900F986D2 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD85AE81D8AFDA900F986D2 /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3F49522F1D80B470008A6820 /* QuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		3F4952371D821BB6008A6820 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 		3F4952391D8223CC008A6820 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3FD85AE81D8AFDA900F986D2 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD85AE91D8AFDA900F986D2 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +93,7 @@
 				3F49521A1D80A9A4008A6820 /* Founding Fathers Quote Book */,
 				3F3F41991D83595A0067BDB3 /* Supporting Files */,
 				3F4952191D80A9A4008A6820 /* Products */,
+				3FD85AE71D8AFDA800F986D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +114,14 @@
 				3F4952221D80A9A4008A6820 /* Assets.xcassets */,
 			);
 			path = "Founding Fathers Quote Book";
+			sourceTree = "<group>";
+		};
+		3FD85AE71D8AFDA800F986D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FD85AE81D8AFDA900F986D2 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -298,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
