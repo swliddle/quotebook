@@ -25,7 +25,13 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         static let subtitle = "Quote of the Day"
         static let title = "Founding Fathers"
     }
-    
+
+    private struct NotificationAlert {
+        static let title = "Notifications Are Disabled"
+        static let message = "To allow this app to remind you of the quote of the day, please go to the Settings app and enable notifications for the Quotes app."
+        static let buttonLabel = "OK"
+    }
+
     private struct Picker {
         static let AmPmCount = 2
         static let AM = "AM"
@@ -80,11 +86,12 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
             settings in
             
             if settings.authorizationStatus != .authorized {
-                let alertController = UIAlertController(title: "Notifications Are Disabled",
-                                                        message: "To allow this app to remind you of the quote of the day, please go to the Settings app and enable notifications for the Quotes app.",
+                let alertController = UIAlertController(title: NotificationAlert.title,
+                                                        message: NotificationAlert.message,
                                                         preferredStyle: .alert)
-                
-                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alertController.addAction(UIAlertAction(title: NotificationAlert.buttonLabel,
+                                                        style: .default,
+                                                        handler: nil))
                 self.present(alertController, animated: true, completion: nil)
             }
         }
@@ -93,7 +100,7 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     private func registerNotifications() {
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        
+
         if notificationsOn {
             let content = UNMutableNotificationContent()
             
