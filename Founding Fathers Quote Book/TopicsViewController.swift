@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopicsViewController : UITableViewController {
+class TopicsViewController : UITableViewController, UIDataSourceModelAssociation {
 
     // MARK: - Constants
 
@@ -27,6 +27,18 @@ class TopicsViewController : UITableViewController {
         if let destinationVC = segue.destination as? QuoteViewController {
             destinationVC.topic = selectedTopic
         }
+    }
+
+    // MARK: - Data source model association
+    
+    func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
+        let row = QuoteDeck.sharedInstance.tagSet.index(of: identifier) ?? 0
+        
+        return IndexPath(row: row, section: 0)
+    }
+
+    func modelIdentifierForElement(at idx: IndexPath, in view: UIView) -> String? {
+        return QuoteDeck.sharedInstance.tagSet[idx.row]
     }
 
     // MARK: - Table view data source

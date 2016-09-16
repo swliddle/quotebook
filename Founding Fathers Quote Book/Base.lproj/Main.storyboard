@@ -331,7 +331,7 @@
         <scene sceneID="th6-li-1cO">
             <objects>
                 <tableViewController storyboardIdentifier="topicsVC" title="Topics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qLd-mw-wVF" customClass="TopicsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kd9-hR-mQ6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TopicsTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kd9-hR-mQ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -373,6 +373,6 @@
         <image name="FoundingFathersSquare" width="799" height="799"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Erv-uA-yCH"/>
+        <segue reference="85a-SM-3Mw"/>
     </inferredMetricsTieBreakers>
 </document>
