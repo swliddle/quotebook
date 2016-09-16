@@ -339,10 +339,10 @@
             </objects>
             <point key="canvasLocation" x="1985" y="1172"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Rotating Navigation Controller-->
         <scene sceneID="YVY-Yr-Iyz">
             <objects>
-                <navigationController storyboardIdentifier="SettingsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UsM-hC-VEA" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UsM-hC-VEA" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LoO-9f-mtA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -357,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="1986" y="388"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Rotating Navigation Controller-->
         <scene sceneID="zY5-n5-BAR">
             <objects>
-                <navigationController storyboardIdentifier="TopicsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ebu-7n-pPl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TopicsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ebu-7n-pPl" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="75c-aS-4WS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
