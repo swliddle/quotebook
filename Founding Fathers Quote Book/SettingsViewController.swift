@@ -37,10 +37,10 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         static let AM = "AM"
         static let ComponentWidth: CGFloat = 50.0
         static let InitialHourIndex = 6
-        static let MinutesPerGroup = 5
+        static let MinutesPerGroup = 1
         static let NoonIndex = 11
         static let NumberOfHours = 12
-        static let NumberOfMinuteElements = 12
+        static let NumberOfMinuteElements = 60
         static let PM = "PM"
         static let RowHeight: CGFloat = 30.0
         static let WheelFactor = 24

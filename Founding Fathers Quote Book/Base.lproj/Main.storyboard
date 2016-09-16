@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Founding Fathers Quote Book-->
+        <!--Quote of the Day-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,56 +20,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoundingFathersSquare" translatesAutoresizingMaskIntoConstraints="NO" id="oVJ-Tf-TJ3"/>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H77-Sz-VPv">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="6zI-Rf-78M"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Browse Topics"/>
+                            <webView alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kl-5U-7F4">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <segue destination="qLd-mw-wVF" kind="show" id="e2l-nj-iT8"/>
+                                    <outletCollection property="gestureRecognizers" destination="c4d-dN-YDu" appends="YES" id="M8v-fb-Dd1"/>
+                                    <outletCollection property="gestureRecognizers" destination="62P-yL-gZe" appends="YES" id="e2I-3S-eIn"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skp-Qp-kWh">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="157" id="aSF-D4-ZHG"/>
-                                </constraints>
-                                <state key="normal" title="Quote of the Day"/>
-                                <connections>
-                                    <segue destination="HmX-TE-KH2" kind="show" identifier="ShowQuote" id="Erv-uA-yCH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELx-SP-H7I">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Set Up"/>
-                                <connections>
-                                    <segue destination="kK4-sN-hCg" kind="show" id="eaG-3y-KGp"/>
-                                </connections>
-                            </button>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="skp-Qp-kWh" firstAttribute="trailing" secondItem="ELx-SP-H7I" secondAttribute="trailing" id="9Sr-op-x1n"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Kl-5U-7F4" secondAttribute="bottom" id="ALs-Z5-4QO"/>
+                            <constraint firstItem="6Kl-5U-7F4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BDi-fp-she"/>
                             <constraint firstItem="oVJ-Tf-TJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gsr-Zd-zzr"/>
-                            <constraint firstItem="H77-Sz-VPv" firstAttribute="trailing" secondItem="ELx-SP-H7I" secondAttribute="trailing" id="Ink-Am-4k9"/>
-                            <constraint firstItem="skp-Qp-kWh" firstAttribute="leading" secondItem="ELx-SP-H7I" secondAttribute="leading" id="Tp2-cH-l5s"/>
-                            <constraint firstItem="H77-Sz-VPv" firstAttribute="top" secondItem="skp-Qp-kWh" secondAttribute="bottom" constant="8" id="VHk-3b-TjD"/>
-                            <constraint firstItem="H77-Sz-VPv" firstAttribute="centerX" secondItem="oVJ-Tf-TJ3" secondAttribute="centerX" id="cc5-25-Vjh"/>
-                            <constraint firstItem="skp-Qp-kWh" firstAttribute="top" secondItem="ELx-SP-H7I" secondAttribute="bottom" constant="8" id="hon-qo-euY"/>
                             <constraint firstItem="oVJ-Tf-TJ3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iFt-CJ-fre"/>
-                            <constraint firstItem="H77-Sz-VPv" firstAttribute="leading" secondItem="ELx-SP-H7I" secondAttribute="leading" id="jKL-2m-sXc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oVJ-Tf-TJ3" secondAttribute="bottom" id="mVN-GV-lA1"/>
-                            <constraint firstItem="H77-Sz-VPv" firstAttribute="top" secondItem="oVJ-Tf-TJ3" secondAttribute="bottom" constant="-80" id="s0T-yG-Oji"/>
+                            <constraint firstItem="6Kl-5U-7F4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pla-QA-oJh"/>
+                            <constraint firstAttribute="trailing" secondItem="6Kl-5U-7F4" secondAttribute="trailing" id="vrm-do-8BV"/>
                             <constraint firstAttribute="trailing" secondItem="oVJ-Tf-TJ3" secondAttribute="trailing" id="xgz-P9-2yB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Founding Fathers Quote Book" id="sgO-MU-p6D"/>
+                    <navigationItem key="navigationItem" title="Quote of the Day" id="sgO-MU-p6D">
+                        <barButtonItem key="leftBarButtonItem" title="Topics" id="vWM-oA-cyn">
+                            <connections>
+                                <action selector="toggleTopics:" destination="BYZ-38-t0r" id="Ql6-Ud-i7c"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="xcY-hC-I2W">
+                            <connections>
+                                <segue destination="UsM-hC-VEA" kind="presentation" id="Doi-2Q-ygj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="toggleButton" destination="vWM-oA-cyn" id="KWJ-Gy-NNU"/>
+                        <outlet property="webView" destination="6Kl-5U-7F4" id="175-Gx-mfo"/>
+                        <segue destination="ebu-7n-pPl" kind="presentation" identifier="ShowTopics" id="OeM-n5-PuL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="c4d-dN-YDu">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="wU2-3y-lve"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="62P-yL-gZe">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="ZxB-bX-MfG"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1152" y="389"/>
+            <point key="canvasLocation" x="1151.2" y="388.15592203898052"/>
         </scene>
         <!--Settings-->
         <scene sceneID="KFD-1w-Lxy">
@@ -246,6 +248,13 @@
                             <outlet property="delegate" destination="kK4-sN-hCg" id="gcA-VU-fh8"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="Wha-Yl-Cco">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Udn-V0-gX3">
+                            <connections>
+                                <segue destination="VfX-Ek-oE9" kind="unwind" unwindAction="exitModalScene:" id="ZcS-AV-538"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="notificationsSwitch" destination="V9P-Vg-4UT" id="T2e-mT-wZe"/>
                         <outlet property="pickerView" destination="CZ7-kA-d1P" id="qWk-GA-L8u"/>
@@ -259,55 +268,9 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThA-nd-D6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VfX-Ek-oE9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="389"/>
-        </scene>
-        <!--Quote of the Day-->
-        <scene sceneID="gq6-l8-235">
-            <objects>
-                <viewController storyboardIdentifier="quoteVC" title="Quote of the Day" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HmX-TE-KH2" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vWk-RO-jQg"/>
-                        <viewControllerLayoutGuide type="bottom" id="W9f-pZ-7B4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9Z0-Rs-L6k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGs-Jg-xl3">
-                                <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mVB-BR-qhy" appends="YES" id="Wdk-vf-66r"/>
-                                    <outletCollection property="gestureRecognizers" destination="MQp-8r-Ckx" appends="YES" id="43D-kp-Xlo"/>
-                                </connections>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="W9f-pZ-7B4" firstAttribute="top" secondItem="fGs-Jg-xl3" secondAttribute="bottom" id="1a9-PO-rSd"/>
-                            <constraint firstItem="fGs-Jg-xl3" firstAttribute="leading" secondItem="9Z0-Rs-L6k" secondAttribute="leading" id="QC5-Hr-GAp"/>
-                            <constraint firstAttribute="trailing" secondItem="fGs-Jg-xl3" secondAttribute="trailing" id="Xsb-I2-tVd"/>
-                            <constraint firstItem="fGs-Jg-xl3" firstAttribute="top" secondItem="9Z0-Rs-L6k" secondAttribute="top" id="gg8-Re-GVn"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="fGs-Jg-xl3" id="s4g-HS-gj6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5UD-Io-Kxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="mVB-BR-qhy">
-                    <connections>
-                        <action selector="swipe:" destination="HmX-TE-KH2" id="4XD-s6-7HL"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="MQp-8r-Ckx">
-                    <connections>
-                        <action selector="swipe:" destination="HmX-TE-KH2" id="nPv-Az-XD8"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="1877" y="1195"/>
+            <point key="canvasLocation" x="2815.1999999999998" y="388.15592203898052"/>
         </scene>
         <!--Rotating Navigation Controller-->
         <scene sceneID="IRm-IL-Hbj">
@@ -336,15 +299,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicCell" textLabel="Qai-4u-xtj" style="IBUITableViewCellStyleDefault" id="9Ga-Wt-RIp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicCell" textLabel="Qai-4u-xtj" style="IBUITableViewCellStyleDefault" id="9Ga-Wt-RIp">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ga-Wt-RIp" id="TaU-zn-qcc">
-                                    <frame key="frameInset" width="342" height="43"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qai-4u-xtj">
-                                            <frame key="frameInset" minX="15" width="325" height="43"/>
+                                            <frame key="frameInset" minX="15" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -352,6 +315,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vdA-be-5xv" kind="unwind" identifier="ShowQuote" unwindAction="showTopicQuotes:" id="Tp1-u5-rkY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -360,19 +326,57 @@
                             <outlet property="delegate" destination="qLd-mw-wVF" id="sU1-m1-HoE"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="HmX-TE-KH2" kind="show" identifier="ShowQuote" id="85a-SM-3Mw"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Topics" id="Dm9-bC-viG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="v9J-SK-ZAX">
+                            <connections>
+                                <segue destination="vdA-be-5xv" kind="unwind" unwindAction="exitModalScene:" id="Flq-5Q-wkb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6J-np-O7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vdA-be-5xv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="1195"/>
+            <point key="canvasLocation" x="1985" y="1172"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YVY-Yr-Iyz">
+            <objects>
+                <navigationController storyboardIdentifier="SettingsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UsM-hC-VEA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LoO-9f-mtA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kK4-sN-hCg" kind="relationship" relationship="rootViewController" id="2fr-IX-KlP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oM-ax-TDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="388"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zY5-n5-BAR">
+            <objects>
+                <navigationController storyboardIdentifier="TopicsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ebu-7n-pPl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="75c-aS-4WS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qLd-mw-wVF" kind="relationship" relationship="rootViewController" id="91s-xT-PM3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bq6-Zp-3uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149.5999999999999" y="1171.6641679160421"/>
         </scene>
     </scenes>
     <resources>
         <image name="FoundingFathersSquare" width="799" height="799"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="85a-SM-3Mw"/>
-    </inferredMetricsTieBreakers>
 </document>

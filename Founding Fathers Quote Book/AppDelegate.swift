@@ -56,8 +56,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     private func segueToQuoteOfTheDay() {
         if let rotatingNavVC = window?.rootViewController as? RotatingNavigationController {
-            rotatingNavVC.popToRootViewController(animated: false)
-            rotatingNavVC.viewControllers.first?.performSegue(withIdentifier: Storyboard.ShowQuoteSegueIdentifier, sender: nil)
+            rotatingNavVC.dismiss(animated: true)
+
+            if let quoteVC = rotatingNavVC.viewControllers.first as? QuoteViewController {
+                quoteVC.showQuoteOfTheDay()
+            }
         }
     }
 }
