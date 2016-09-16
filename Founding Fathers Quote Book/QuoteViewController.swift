@@ -118,6 +118,7 @@ class QuoteViewController : UIViewController {
             // See http://bit.ly/2ctUdTI
             
             let fadeTextAnimation = CATransition()
+
             fadeTextAnimation.duration = 0.75
             fadeTextAnimation.type = kCATransitionFade
             
