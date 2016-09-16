@@ -49,14 +49,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="xcY-hC-I2W">
                             <connections>
-                                <segue destination="UsM-hC-VEA" kind="presentation" id="Doi-2Q-ygj"/>
+                                <segue destination="UsM-hC-VEA" kind="presentation" modalPresentationStyle="formSheet" id="Doi-2Q-ygj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="toggleButton" destination="vWM-oA-cyn" id="KWJ-Gy-NNU"/>
                         <outlet property="webView" destination="6Kl-5U-7F4" id="175-Gx-mfo"/>
-                        <segue destination="ebu-7n-pPl" kind="presentation" identifier="ShowTopics" id="OeM-n5-PuL"/>
+                        <segue destination="ebu-7n-pPl" kind="presentation" identifier="ShowTopics" modalPresentationStyle="formSheet" id="OeM-n5-PuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
