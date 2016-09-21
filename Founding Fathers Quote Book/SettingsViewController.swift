@@ -13,6 +13,11 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
 
     // MARK: - Constants
     
+    private struct Color {
+        static let disabled = UIColor.clear
+        static let enabled = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+    }
+    
     private struct Component {
         static let Hours = 0
         static let Minutes = 1
@@ -37,22 +42,21 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         static let AM = "AM"
         static let ComponentWidth: CGFloat = 50.0
         static let InitialHourIndex = 6
-        static let MinutesPerGroup = 1
+        static let MinutesPerGroup = 5
         static let NoonIndex = 11
         static let NumberOfHours = 12
-        static let NumberOfMinuteElements = 60
+        static let NumberOfMinuteElements = 12
         static let PM = "PM"
         static let RowHeight: CGFloat = 30.0
         static let WheelFactor = 24
     }
 
-    private struct Color {
-        static let disabled = UIColor.clear
-        static let enabled = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
-    }
-    
     private enum Settings: String {
         case NotificationsOn, HourIndex, MinutesIndex, IsAm, NotifyDays
+    }
+    
+    private struct Storyboard {
+        static let ExitSegueIdentifier = "ExitModal"
     }
 
     // MARK: - Outlets
@@ -77,6 +81,14 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         checkNotificationPermissions()
         restoreSettings()
         updateUI()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if AppDelegate.shared.wantsToDisplayQuoteOfTheDay {
+            performSegue(withIdentifier: Storyboard.ExitSegueIdentifier, sender: nil)
+        }
     }
 
     // MARK: - Helpers

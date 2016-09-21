@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoundingFathersSquare" translatesAutoresizingMaskIntoConstraints="NO" id="oVJ-Tf-TJ3"/>
@@ -78,17 +78,17 @@
             <objects>
                 <tableViewController storyboardIdentifier="settingsVC" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kK4-sN-hCg" customClass="SettingsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="VBV-Dn-zQW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="seY-Mb-UPd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="kqe-rm-MeJ">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="64" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kqe-rm-MeJ" id="6qq-Vb-g9r">
-                                            <frame key="frameInset" width="375" height="60"/>
+                                            <frame key="frameInset" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Notify me of the quote of the day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-vy-Eyf">
@@ -108,7 +108,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0Sf-vy-Eyf" firstAttribute="centerY" secondItem="V9P-Vg-4UT" secondAttribute="centerY" id="8AO-9G-eyl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="V9P-Vg-4UT" secondAttribute="trailing" id="f9z-0L-4TN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="V9P-Vg-4UT" secondAttribute="trailing" constant="12" id="f9z-0L-4TN"/>
                                                 <constraint firstItem="V9P-Vg-4UT" firstAttribute="centerY" secondItem="6qq-Vb-g9r" secondAttribute="centerY" id="kyn-5Z-vAc"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="0Sf-vy-Eyf" secondAttribute="leading" constant="-12" id="nKZ-Xo-2Gm"/>
                                                 <constraint firstItem="V9P-Vg-4UT" firstAttribute="leading" secondItem="0Sf-vy-Eyf" secondAttribute="trailing" constant="8" id="pfI-VW-iTG"/>
@@ -116,10 +116,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="216" id="SAV-FS-CcQ">
-                                        <rect key="frame" x="0.0" y="124" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="124" width="414" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SAV-FS-CcQ" id="NIV-67-G5o">
-                                            <frame key="frameInset" width="375" height="216"/>
+                                            <frame key="frameInset" width="414" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZ7-kA-d1P">
@@ -138,10 +138,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="HzK-8P-zww">
-                                        <rect key="frame" x="0.0" y="340" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="340" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HzK-8P-zww" id="vNc-zG-iQQ">
-                                            <frame key="frameInset" width="375" height="60"/>
+                                            <frame key="frameInset" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqE-bN-6FW">
@@ -251,7 +251,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="Wha-Yl-Cco">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Udn-V0-gX3">
                             <connections>
-                                <segue destination="VfX-Ek-oE9" kind="unwind" unwindAction="exitModalScene:" id="ZcS-AV-538"/>
+                                <segue destination="VfX-Ek-oE9" kind="unwind" identifier="ExitModal" unwindAction="exitModalScene:" id="ZcS-AV-538"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -295,19 +295,19 @@
             <objects>
                 <tableViewController storyboardIdentifier="topicsVC" title="Topics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qLd-mw-wVF" customClass="TopicsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TopicsTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kd9-hR-mQ6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicCell" textLabel="Qai-4u-xtj" style="IBUITableViewCellStyleDefault" id="9Ga-Wt-RIp">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ga-Wt-RIp" id="TaU-zn-qcc">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qai-4u-xtj">
-                                            <frame key="frameInset" minX="15" width="345" height="43"/>
+                                            <frame key="frameInset" minX="15" width="384" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

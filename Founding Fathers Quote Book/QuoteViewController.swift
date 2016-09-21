@@ -44,6 +44,16 @@ class QuoteViewController : UIViewController {
         configure(updatingCurrentIndex: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if AppDelegate.shared.wantsToDisplayQuoteOfTheDay {
+            AppDelegate.shared.wantsToDisplayQuoteOfTheDay = false
+            topic = nil
+            configure(updatingCurrentIndex: true)
+        }
+    }
+
     // MARK: - State restoration
     
     override func decodeRestorableState(with coder: NSCoder) {

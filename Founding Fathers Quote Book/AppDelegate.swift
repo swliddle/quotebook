@@ -21,13 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // MARK: - Properties
     
     var window: UIWindow?
+    var wantsToDisplayQuoteOfTheDay = false
 
+    // MARK: - Class properties
+    
+    static var shared: AppDelegate!
+    
     // MARK: - Application lifecycle
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: .alert) { _,_ in }
+        AppDelegate.shared = self
         
         return true
     }
@@ -55,6 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // MARK: - Helpers
     
     private func segueToQuoteOfTheDay() {
+        wantsToDisplayQuoteOfTheDay = true
+
         if let rotatingNavVC = window?.rootViewController as? RotatingNavigationController {
             rotatingNavVC.dismiss(animated: true)
 
