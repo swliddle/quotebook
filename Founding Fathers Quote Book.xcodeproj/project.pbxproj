@@ -12,6 +12,8 @@
 		3F291ED91F6999BE0058DCEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F291ED71F6999BE0058DCEC /* Main.storyboard */; };
 		3F291EDB1F6999BE0058DCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F291EDA1F6999BE0058DCEC /* Assets.xcassets */; };
 		3F291EDE1F6999BE0058DCEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F291EDC1F6999BE0058DCEC /* LaunchScreen.storyboard */; };
+		3F291EE71F699FB90058DCEC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F291EE61F699FB90058DCEC /* WebKit.framework */; };
+		3F291EE91F699FFE0058DCEC /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		3F291EDA1F6999BE0058DCEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F291EDD1F6999BE0058DCEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F291EDF1F6999BE0058DCEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F291EE61F699FB90058DCEC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F291EE71F699FB90058DCEC /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				3F291ED21F6999BE0058DCEC /* Founding Fathers Quote Book */,
 				3F291ED11F6999BE0058DCEC /* Products */,
+				3F291EE51F699FB80058DCEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,11 +63,20 @@
 				3F291ED31F6999BE0058DCEC /* AppDelegate.swift */,
 				3F291ED51F6999BE0058DCEC /* ViewController.swift */,
 				3F291ED71F6999BE0058DCEC /* Main.storyboard */,
+				3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */,
 				3F291EDA1F6999BE0058DCEC /* Assets.xcassets */,
 				3F291EDC1F6999BE0058DCEC /* LaunchScreen.storyboard */,
 				3F291EDF1F6999BE0058DCEC /* Info.plist */,
 			);
 			path = "Founding Fathers Quote Book";
+			sourceTree = "<group>";
+		};
+		3F291EE51F699FB80058DCEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F291EE61F699FB90058DCEC /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F291EE91F699FFE0058DCEC /* QuoteViewController.swift in Sources */,
 				3F291ED61F6999BE0058DCEC /* ViewController.swift in Sources */,
 				3F291ED41F6999BE0058DCEC /* AppDelegate.swift in Sources */,
 			);
