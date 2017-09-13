@@ -6,14 +6,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Founding Fathers Quote Book-->
+        <!--Quote of the Day-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,63 +20,47 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoundingFathersSquare" translatesAutoresizingMaskIntoConstraints="NO" id="8Qb-18-Du2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hnp-Qb-Rf9">
-                                <rect key="frame" x="109" y="592" width="157" height="106"/>
-                                <subviews>
-                                    <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxA-8y-eiU">
-                                        <rect key="frame" x="0.0" y="0.0" width="157" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Set Up"/>
-                                        <connections>
-                                            <segue destination="JKc-yj-2ML" kind="show" id="h8P-SC-hDG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaK-HR-ZgX">
-                                        <rect key="frame" x="0.0" y="38" width="157" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="157" id="yRX-pk-ZaY"/>
-                                        </constraints>
-                                        <state key="normal" title="Quote of the Day"/>
-                                        <connections>
-                                            <segue destination="6pb-CD-MWe" kind="show" id="Mvg-wK-IuB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-BS-TGI">
-                                        <rect key="frame" x="0.0" y="76" width="157" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Browse Topics"/>
-                                        <connections>
-                                            <segue destination="9Ni-oa-qaz" kind="show" id="jjS-Sp-PJ0"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="qaK-HR-ZgX" firstAttribute="leading" secondItem="IxA-8y-eiU" secondAttribute="leading" id="Fqe-yS-GZS"/>
-                                    <constraint firstItem="4Oe-BS-TGI" firstAttribute="leading" secondItem="IxA-8y-eiU" secondAttribute="leading" id="OdH-bf-hu0"/>
-                                    <constraint firstItem="qaK-HR-ZgX" firstAttribute="trailing" secondItem="IxA-8y-eiU" secondAttribute="trailing" id="Vxp-fp-OQE"/>
-                                    <constraint firstItem="4Oe-BS-TGI" firstAttribute="trailing" secondItem="IxA-8y-eiU" secondAttribute="trailing" id="rHc-2P-YNe"/>
-                                </constraints>
-                            </stackView>
+                            <wkWebView alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9D6-H3-byL">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hnp-Qb-Rf9" firstAttribute="bottom" secondItem="8Qb-18-Du2" secondAttribute="bottom" constant="-80" id="3rj-cU-Hqy"/>
                             <constraint firstItem="8Qb-18-Du2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3wd-gA-gTe"/>
                             <constraint firstItem="8Qb-18-Du2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bym-X9-M2W"/>
-                            <constraint firstItem="hnp-Qb-Rf9" firstAttribute="centerX" secondItem="8Qb-18-Du2" secondAttribute="centerX" id="Wsq-gl-ztQ"/>
+                            <constraint firstItem="9D6-H3-byL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ODj-co-o4L"/>
                             <constraint firstItem="8Qb-18-Du2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h6O-5I-jya"/>
                             <constraint firstItem="8Qb-18-Du2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lbq-F3-VF4"/>
+                            <constraint firstItem="9D6-H3-byL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mXs-br-W10"/>
+                            <constraint firstItem="9D6-H3-byL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p7g-wL-I2P"/>
+                            <constraint firstAttribute="bottom" secondItem="9D6-H3-byL" secondAttribute="bottom" id="vuU-YS-i2d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Founding Fathers Quote Book" id="B4e-Ym-iXw">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="SRX-Gb-lRT"/>
+                    <navigationItem key="navigationItem" title="Quote of the Day" id="B4e-Ym-iXw">
+                        <barButtonItem key="leftBarButtonItem" title="Topics" id="wbS-o0-jis">
+                            <connections>
+                                <segue destination="Erp-PF-oEC" kind="presentation" id="boc-bF-FFj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="awr-0A-lz3">
+                            <connections>
+                                <segue destination="0Ve-j0-4wZ" kind="presentation" id="9PX-lm-pvd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="9D6-H3-byL" id="poq-TX-gho"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479.19999999999999" y="132.68365817091455"/>
+            <point key="canvasLocation" x="479.19999999999999" y="132.26600985221674"/>
         </scene>
         <!--Settings-->
         <scene sceneID="f4l-NT-q5h">
@@ -135,10 +118,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QmP-WK-xtd"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="Aph-wU-wDK">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ATl-e1-3cP">
+                            <connections>
+                                <segue destination="BjI-c9-H8C" kind="unwind" unwindAction="exitModalScene:" id="Bhw-ky-3ud"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ED1-vD-JrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BjI-c9-H8C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="133"/>
+            <point key="canvasLocation" x="2060" y="132"/>
         </scene>
         <!--Notify on Days-->
         <scene sceneID="XPp-h5-cC4">
@@ -281,7 +272,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAI-mc-2Lf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2066" y="132"/>
+            <point key="canvasLocation" x="2860" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NIT-9k-tWK">
@@ -328,9 +319,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="6pb-CD-MWe" kind="show" id="nTJ-hG-afx"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="LL5-5I-NkY" style="IBUITableViewCellStyleDefault" id="mx6-pf-Oqs">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -348,9 +336,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="6pb-CD-MWe" kind="show" id="t9U-4V-Fa6"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="C3v-NN-4am" style="IBUITableViewCellStyleDefault" id="Tl0-vo-O2i">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
@@ -496,50 +481,57 @@
                             <outlet property="delegate" destination="9Ni-oa-qaz" id="Cvd-tZ-1xK"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Topics" id="h9j-Au-LY8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kyY-jM-MSV">
+                            <connections>
+                                <segue destination="sOC-fa-gnB" kind="unwind" unwindAction="exitModalScene:" id="hoh-Ke-M4v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCe-cl-MPS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sOC-fa-gnB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="479" y="884"/>
+            <point key="canvasLocation" x="1273" y="884"/>
         </scene>
-        <!--Quote of the Day-->
-        <scene sceneID="Joo-Hp-YgT">
+        <!--Navigation Controller-->
+        <scene sceneID="TV4-TE-slQ">
             <objects>
-                <viewController title="Quote of the Day" id="6pb-CD-MWe" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8ua-dX-Xqm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hu7-fV-7hf">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Hu7-fV-7hf" firstAttribute="trailing" secondItem="v0f-N4-ihX" secondAttribute="trailing" id="9Cy-LU-Vul"/>
-                            <constraint firstItem="Hu7-fV-7hf" firstAttribute="top" secondItem="v0f-N4-ihX" secondAttribute="top" id="Qur-Hv-Fe0"/>
-                            <constraint firstItem="Hu7-fV-7hf" firstAttribute="bottom" secondItem="v0f-N4-ihX" secondAttribute="bottom" id="gmd-5y-lkZ"/>
-                            <constraint firstItem="Hu7-fV-7hf" firstAttribute="leading" secondItem="v0f-N4-ihX" secondAttribute="leading" id="qeH-Fe-HDB"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="v0f-N4-ihX"/>
-                    </view>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Erp-PF-oEC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="va0-in-GgT">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <outlet property="webView" destination="Hu7-fV-7hf" id="87W-eN-FYb"/>
+                        <segue destination="9Ni-oa-qaz" kind="relationship" relationship="rootViewController" id="o38-X5-UXH"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aNJ-2y-ZUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIq-LG-Y42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272.8" y="883.74384236453204"/>
+            <point key="canvasLocation" x="478.39999999999998" y="883.74384236453204"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gke-6N-gno">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Ve-j0-4wZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="llw-z6-Y8H">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JKc-yj-2ML" kind="relationship" relationship="rootViewController" id="1aL-sc-EEQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qfb-lh-kAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="132.26600985221674"/>
         </scene>
     </scenes>
     <resources>
         <image name="FoundingFathersSquare" width="799" height="799"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="t9U-4V-Fa6"/>
-    </inferredMetricsTieBreakers>
 </document>

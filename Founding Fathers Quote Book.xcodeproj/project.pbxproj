@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F291ED41F6999BE0058DCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F291ED31F6999BE0058DCEC /* AppDelegate.swift */; };
-		3F291ED61F6999BE0058DCEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F291ED51F6999BE0058DCEC /* ViewController.swift */; };
 		3F291ED91F6999BE0058DCEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F291ED71F6999BE0058DCEC /* Main.storyboard */; };
 		3F291EDB1F6999BE0058DCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F291EDA1F6999BE0058DCEC /* Assets.xcassets */; };
 		3F291EDE1F6999BE0058DCEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F291EDC1F6999BE0058DCEC /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		3F291ED01F6999BE0058DCEC /* Founding Fathers Quote Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Founding Fathers Quote Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F291ED31F6999BE0058DCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F291ED51F6999BE0058DCEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F291ED81F6999BE0058DCEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F291EDA1F6999BE0058DCEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F291EDD1F6999BE0058DCEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				3F291ED31F6999BE0058DCEC /* AppDelegate.swift */,
-				3F291ED51F6999BE0058DCEC /* ViewController.swift */,
 				3F291ED71F6999BE0058DCEC /* Main.storyboard */,
 				3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */,
 				3F291EDA1F6999BE0058DCEC /* Assets.xcassets */,
@@ -152,7 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F291EE91F699FFE0058DCEC /* QuoteViewController.swift in Sources */,
-				3F291ED61F6999BE0058DCEC /* ViewController.swift in Sources */,
 				3F291ED41F6999BE0058DCEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

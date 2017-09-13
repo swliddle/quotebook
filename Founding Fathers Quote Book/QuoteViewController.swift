@@ -50,4 +50,8 @@ class QuoteViewController : UIViewController {
                                 </html>
                                """, baseURL: nil)
     }
+    
+    @IBAction func exitModalScene(_ segue: UIStoryboardSegue) {
+        // Nothing to do; just need a target for the unwind segue
+    }
 }
