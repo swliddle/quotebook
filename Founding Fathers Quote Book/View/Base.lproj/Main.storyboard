@@ -83,7 +83,7 @@
         <!--Settings-->
         <scene sceneID="WKm-C2-Gwm">
             <objects>
-                <tableViewController id="ODL-0r-pXC" sceneMemberID="viewController">
+                <tableViewController id="ODL-0r-pXC" customClass="SettingsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DgF-Px-buu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +106,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="677-b0-Ju3">
                                                     <rect key="frame" x="316" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleNotifications:" destination="ODL-0r-pXC" eventType="valueChanged" id="m6k-pg-hQP"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -129,6 +132,10 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="162" id="ULX-U1-zXC"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="ODL-0r-pXC" id="cfi-aE-Fby"/>
+                                                        <outlet property="delegate" destination="ODL-0r-pXC" id="L0K-EY-zY2"/>
+                                                    </connections>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
@@ -152,36 +159,57 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="30.000000000000007" height="30"/>
                                                             <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="S"/>
+                                                            <connections>
+                                                                <action selector="toggleDay:" destination="ODL-0r-pXC" eventType="touchUpInside" id="soE-aY-RnZ"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D24-re-eU0">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D24-re-eU0">
                                                             <rect key="frame" x="38.000000000000007" y="0.0" width="29.999999999999993" height="30"/>
                                                             <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="M"/>
+                                                            <connections>
+                                                                <action selector="toggleDay:" destination="ODL-0r-pXC" eventType="touchUpInside" id="lli-Jt-ndq"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56B-Mp-w5v">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56B-Mp-w5v">
                                                             <rect key="frame" x="76" y="0.0" width="30" height="30"/>
                                                             <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="T"/>
+                                                            <connections>
+                                                                <action selector="toggleDay:" destination="ODL-0r-pXC" eventType="touchUpInside" id="1je-Yo-G2R"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-Km-Eg6">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-Km-Eg6">
                                                             <rect key="frame" x="114" y="0.0" width="30" height="30"/>
                                                             <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="W"/>
+                                                            <connections>
+                                                                <action selector="toggleDay:" destination="ODL-0r-pXC" eventType="touchUpInside" id="TKc-fI-WeH"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwx-jj-UyE">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwx-jj-UyE">
                                                             <rect key="frame" x="152" y="0.0" width="30" height="30"/>
                                                             <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="T"/>
+                                                            <connections>
+                                                                <action selector="toggleDay:" destination="ODL-0r-pXC" eventType="touchUpInside" id="YQS-FS-0OJ"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-q7-mRM">
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-q7-mRM">
                                                             <rect key="frame" x="190" y="0.0" width="30.000000000000028" height="30"/>
                                                             <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="F"/>
+                                                            <connections>
+                                                                <action selector="toggleDay:" destination="ODL-0r-pXC" eventType="touchUpInside" id="AJp-i5-rsr"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GR-LH-INg">
+                                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GR-LH-INg">
                                                             <rect key="frame" x="228.00000000000003" y="0.0" width="29.999999999999972" height="30"/>
                                                             <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="S"/>
+                                                            <connections>
+                                                                <action selector="toggleDay:" destination="ODL-0r-pXC" eventType="touchUpInside" id="0YX-5s-hdL"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -207,6 +235,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="notificationsSwitch" destination="677-b0-Ju3" id="uQn-PS-Xqs"/>
+                        <outlet property="pickerView" destination="0Mq-Ee-sia" id="otR-HK-xpc"/>
+                        <outletCollection property="dayButtons" destination="qWL-I4-jfA" collectionClass="NSMutableArray" id="Jgd-B3-eBI"/>
+                        <outletCollection property="dayButtons" destination="D24-re-eU0" collectionClass="NSMutableArray" id="u9b-MC-2IS"/>
+                        <outletCollection property="dayButtons" destination="56B-Mp-w5v" collectionClass="NSMutableArray" id="kTc-9i-ifQ"/>
+                        <outletCollection property="dayButtons" destination="mAw-Km-Eg6" collectionClass="NSMutableArray" id="IIK-D5-3gK"/>
+                        <outletCollection property="dayButtons" destination="2GR-LH-INg" collectionClass="NSMutableArray" id="ntD-1F-e7K"/>
+                        <outletCollection property="dayButtons" destination="c5n-q7-mRM" collectionClass="NSMutableArray" id="aw6-mp-rbY"/>
+                        <outletCollection property="dayButtons" destination="Fwx-jj-UyE" collectionClass="NSMutableArray" id="Ngo-lT-26X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6F9-1t-rYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Hsa-aw-hmT" userLabel="Exit" sceneMemberID="exit"/>
