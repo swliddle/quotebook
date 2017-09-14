@@ -11,45 +11,41 @@ import WebKit
 
 class QuoteViewController : UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var webView: WKWebView!
+    
+    // MARK: - Properties
+    
+    var currentQuoteIndex = 0
+    
+    // MARK: - View controller lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView.loadHTMLString("""
-                                <!DOCTYPE html>
-                                <html>
-                                <head>
-                                <title>Quote of the Day</title>
-                                <meta name="viewport" content="initial-scale=1.0">
-                                <style>
-                                    body {
-                                        padding: 1em;
-                                        font-size: 24pt;
-                                    }
-
-                                    .quote {
-                                        font-style: italic;
-                                    }
-
-                                    .speaker {
-                                        text-align: right;
-                                        padding-top: 1em;
-                                    }
-
-                                    .speaker::before {
-                                        content: "— ";
-                                    }
-                                </style>
-                                </head>
-                                <body>
-                                <div class="quote">Do you want to know who you are? Don&rsquo;t ask. Act!
-                                                   Action will delineate and define you.</div>
-                                <div class="speaker">Thomas Jefferson</div>
-                                </body>
-                                </html>
-                               """, baseURL: nil)
+        chooseQuoteOfTheDay()
+        updateUI()
     }
+    
+    // MARK: - Helpers
+    
+    private func chooseQuoteOfTheDay() {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "DDD"
+        if let dayInYear = Int(formatter.string(from: Date())) {
+            currentQuoteIndex = dayInYear % QuoteDeck.sharedInstance.quotes.count
+        }
+    }
+
+    private func updateUI() {
+        let currentQuote = QuoteDeck.sharedInstance.quotes[currentQuoteIndex]
+
+        webView.loadHTMLString(currentQuote.htmlPage(), baseURL: nil)
+    }
+
+    // MARK: - Segues
     
     @IBAction func exitModalScene(_ segue: UIStoryboardSegue) {
         // Nothing to do; just need a target for the unwind segue
