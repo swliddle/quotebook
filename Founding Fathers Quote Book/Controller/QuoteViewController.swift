@@ -46,6 +46,24 @@ class QuoteViewController : UIViewController {
         configure()
     }
     
+    @IBAction func swipe(_ sender: UISwipeGestureRecognizer) {
+        if sender.direction == .left {
+            currentQuoteIndex -= 1
+            
+            if currentQuoteIndex < 0 {
+                currentQuoteIndex = quotes.count - 1
+            }
+        } else {
+            currentQuoteIndex += 1
+            
+            if currentQuoteIndex >= quotes.count {
+                currentQuoteIndex = 0
+            }
+        }
+        
+        updateUIByToggling()
+    }
+    
     @IBAction func toggleTopics(_ sender: UIBarButtonItem) {
         if sender.title == Storyboard.TopicsTitle {
             performSegue(withIdentifier: Storyboard.ShowTopicsSegueIdentifier, sender: sender)
@@ -89,6 +107,25 @@ class QuoteViewController : UIViewController {
         }
 
         webView.loadHTMLString(currentQuote.htmlPage(), baseURL: nil)
+    }
+
+    private func updateUIByToggling() {
+        let quote = quotes[currentQuoteIndex]
+        
+        if let currentTopic = topic {
+            // See http://bit.ly/2ctUdTI
+            
+            let fadeTextAnimation = CATransition()
+            
+            fadeTextAnimation.duration = 0.75
+            fadeTextAnimation.type = kCATransitionFade
+            
+            navigationController?.navigationBar.layer.add(fadeTextAnimation, forKey: "fadeText")
+            navigationItem.title = "\(currentTopic.capitalized) (\(currentQuoteIndex + 1) of \(quotes.count))"
+        }
+        
+        webView.evaluateJavaScript("toggleQuote('\(quote.text)', '\(quote.speaker)')",
+            completionHandler: nil)
     }
 
     // MARK: - Segues

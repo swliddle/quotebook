@@ -24,10 +24,15 @@
                             <wkWebView alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9D6-H3-byL">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0Fg-Bm-slL" appends="YES" id="q7m-U2-2TX"/>
+                                    <outletCollection property="gestureRecognizers" destination="tCY-jK-zaa" appends="YES" id="EEF-G1-Imf"/>
+                                </connections>
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,6 +67,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="0Fg-Bm-slL">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="SkM-bH-RnC"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="tCY-jK-zaa">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="Zb7-sp-3Hm"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="479.19999999999999" y="132.26600985221674"/>
         </scene>
