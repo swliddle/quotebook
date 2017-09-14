@@ -18,6 +18,7 @@ class QuoteViewController : UIViewController {
     // MARK: - Properties
     
     var currentQuoteIndex = 0
+    var topic: String?
     
     // MARK: - View controller lifecycle
     
@@ -49,5 +50,11 @@ class QuoteViewController : UIViewController {
     
     @IBAction func exitModalScene(_ segue: UIStoryboardSegue) {
         // Nothing to do; just need a target for the unwind segue
+    }
+    
+    @IBAction func showTopicQuotes(_ segue: UIStoryboardSegue) {
+        if let currentTopic = topic {
+            title = currentTopic
+        }
     }
 }

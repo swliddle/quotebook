@@ -254,6 +254,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="sOC-fa-gnB" kind="unwind" identifier="ShowQuote" unwindAction="showTopicQuotes:" id="ChH-iO-m7c"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCe-cl-MPS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="sOC-fa-gnB" userLabel="Exit" sceneMemberID="exit"/>
