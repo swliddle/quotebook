@@ -13,6 +13,8 @@
 		3F291EDE1F6999BE0058DCEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F291EDC1F6999BE0058DCEC /* LaunchScreen.storyboard */; };
 		3F291EE71F699FB90058DCEC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F291EE61F699FB90058DCEC /* WebKit.framework */; };
 		3F291EE91F699FFE0058DCEC /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */; };
+		3F82B5761F6AEC1D00DAF8EE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F82B5751F6AEC1D00DAF8EE /* Quote.swift */; };
+		3F82B5781F6AED2800DAF8EE /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F82B5771F6AED2800DAF8EE /* QuoteDeck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3F291EDF1F6999BE0058DCEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F291EE61F699FB90058DCEC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
+		3F82B5751F6AEC1D00DAF8EE /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		3F82B5771F6AED2800DAF8EE /* QuoteDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +62,10 @@
 		3F291ED21F6999BE0058DCEC /* Founding Fathers Quote Book */ = {
 			isa = PBXGroup;
 			children = (
-				3F291ED31F6999BE0058DCEC /* AppDelegate.swift */,
-				3F291ED71F6999BE0058DCEC /* Main.storyboard */,
-				3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */,
-				3F291EDA1F6999BE0058DCEC /* Assets.xcassets */,
-				3F291EDC1F6999BE0058DCEC /* LaunchScreen.storyboard */,
-				3F291EDF1F6999BE0058DCEC /* Info.plist */,
+				3F82B5711F6AEB9F00DAF8EE /* Model */,
+				3F82B5721F6AEBC500DAF8EE /* View */,
+				3F82B5731F6AEBD000DAF8EE /* Controller */,
+				3F82B5741F6AEBDE00DAF8EE /* Supporting Files */,
 			);
 			path = "Founding Fathers Quote Book";
 			sourceTree = "<group>";
@@ -74,6 +76,42 @@
 				3F291EE61F699FB90058DCEC /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F82B5711F6AEB9F00DAF8EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F82B5751F6AEC1D00DAF8EE /* Quote.swift */,
+				3F82B5771F6AED2800DAF8EE /* QuoteDeck.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F82B5721F6AEBC500DAF8EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F291ED71F6999BE0058DCEC /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F82B5731F6AEBD000DAF8EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F82B5741F6AEBDE00DAF8EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F291ED31F6999BE0058DCEC /* AppDelegate.swift */,
+				3F291EDA1F6999BE0058DCEC /* Assets.xcassets */,
+				3F291EDF1F6999BE0058DCEC /* Info.plist */,
+				3F291EDC1F6999BE0058DCEC /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +187,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F291EE91F699FFE0058DCEC /* QuoteViewController.swift in Sources */,
+				3F82B5761F6AEC1D00DAF8EE /* Quote.swift in Sources */,
 				3F291ED41F6999BE0058DCEC /* AppDelegate.swift in Sources */,
+				3F82B5781F6AED2800DAF8EE /* QuoteDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
