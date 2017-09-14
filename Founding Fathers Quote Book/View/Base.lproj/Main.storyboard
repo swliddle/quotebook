@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Quote of the Day" id="B4e-Ym-iXw">
                         <barButtonItem key="leftBarButtonItem" title="Topics" id="wbS-o0-jis">
                             <connections>
-                                <segue destination="Erp-PF-oEC" kind="presentation" id="boc-bF-FFj"/>
+                                <action selector="toggleTopics:" destination="BYZ-38-t0r" id="XhI-Ck-JAC"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="awr-0A-lz3">
@@ -56,7 +56,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="toggleButton" destination="wbS-o0-jis" id="AsJ-9t-YYQ"/>
                         <outlet property="webView" destination="9D6-H3-byL" id="poq-TX-gho"/>
+                        <segue destination="Erp-PF-oEC" kind="presentation" identifier="ShowTopics" id="qmU-y5-VSy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
