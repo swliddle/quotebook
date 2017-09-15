@@ -28,11 +28,13 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         static let AM = "AM"
         static let ComponentWidth: CGFloat = 50.0
         static let InitialHourIndex = 6
+        static let MinutesPerGroup = 5
         static let NoonIndex = 11
         static let NumberOfHours = 12
-        static let NumberOfMinutes = 60
+        static let NumberOfMinuteElements = 12
         static let PM = "PM"
         static let RowHeight: CGFloat = 30.0
+        static let WheelFactor = 5000
     }
     
     private enum Settings: String {
@@ -64,6 +66,20 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     
     // MARK: - Helpers
     
+    private func indexForSelection(_ row: Int, inComponent component: Int) -> Int {
+        let rowCount = component == Component.Hours ?
+                                    Picker.NumberOfHours :
+                                    Picker.NumberOfMinuteElements
+        
+        if row < Picker.WheelFactor * rowCount || row >= (Picker.WheelFactor + 1) * rowCount {
+            pickerView.selectRow(row % rowCount + Picker.WheelFactor * rowCount,
+                                 inComponent: component,
+                                 animated: false)
+        }
+        
+        return row % rowCount
+    }
+
     private func restoreSettings() {
         let defaults = UserDefaults.standard
         
@@ -91,8 +107,10 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     private func updateUI() {
         notificationsSwitch.setOn(notificationsOn, animated: false)
 
-        pickerView.selectRow(hourIndex, inComponent: Component.Hours, animated: false)
-        pickerView.selectRow(minutesIndex, inComponent: Component.Minutes, animated: false)
+        pickerView.selectRow(hourIndex + Picker.WheelFactor * Picker.NumberOfHours,
+                             inComponent: Component.Hours, animated: false)
+        pickerView.selectRow(minutesIndex + Picker.WheelFactor * Picker.NumberOfMinuteElements,
+                             inComponent: Component.Minutes, animated: false)
         pickerView.selectRow(isAm ? 0 : 1, inComponent: Component.AmPm, animated: false)
 
         for button in dayButtons {
@@ -122,9 +140,9 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case Component.Hours:
-            return Picker.NumberOfHours
+            return Picker.NumberOfHours * (2 * Picker.WheelFactor + 1)
         case Component.Minutes:
-            return Picker.NumberOfMinutes
+            return Picker.NumberOfMinuteElements * (2 * Picker.WheelFactor + 1)
         case Component.AmPm:
             return Picker.AmPmCount
         default:
@@ -135,9 +153,9 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case Component.Hours:
-            return "\(row + 1)"
+            return "\(row % Picker.NumberOfHours + 1)"
         case Component.Minutes:
-            return String(format: "%02d", row)
+            return String(format: "%02d", row % Picker.NumberOfMinuteElements * Picker.MinutesPerGroup)
         case Component.AmPm:
             return row <= 0 ? Picker.AM : Picker.PM
         default:
@@ -150,9 +168,9 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case Component.Hours:
-            hourIndex = row
+            hourIndex = indexForSelection(row, inComponent: component)
         case Component.Minutes:
-            minutesIndex = row
+            minutesIndex = indexForSelection(row, inComponent: component)
         case Component.AmPm:
             isAm = row <= 0 ? true : false
         default:

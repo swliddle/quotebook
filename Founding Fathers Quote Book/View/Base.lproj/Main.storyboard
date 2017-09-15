@@ -84,22 +84,22 @@
         <scene sceneID="WKm-C2-Gwm">
             <objects>
                 <tableViewController id="ODL-0r-pXC" customClass="SettingsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DgF-Px-buu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="DgF-Px-buu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="rhg-rc-MMX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hKl-ZP-lBh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hKl-ZP-lBh" id="sXJ-1W-oei">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify me of the quote of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="K72-ud-Nmm">
-                                                    <rect key="frame" x="8" y="11" width="253" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="253" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -116,12 +116,16 @@
                                                 <constraint firstItem="677-b0-Ju3" firstAttribute="centerY" secondItem="sXJ-1W-oei" secondAttribute="centerY" id="02s-Zu-St9"/>
                                                 <constraint firstItem="K72-ud-Nmm" firstAttribute="centerY" secondItem="sXJ-1W-oei" secondAttribute="centerY" id="RAs-3Y-RmR"/>
                                                 <constraint firstAttribute="trailing" secondItem="677-b0-Ju3" secondAttribute="trailing" constant="10" id="hOD-Gw-bc3"/>
-                                                <constraint firstItem="K72-ud-Nmm" firstAttribute="leading" secondItem="sXJ-1W-oei" secondAttribute="leading" constant="8" id="j1a-hV-L9x"/>
+                                                <constraint firstItem="K72-ud-Nmm" firstAttribute="leading" secondItem="sXJ-1W-oei" secondAttribute="leading" constant="16" id="j1a-hV-L9x"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Notify at Time" id="MBm-tA-uGl">
+                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="162" id="133-Cp-4rO">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="162"/>
+                                        <rect key="frame" x="0.0" y="135" width="375" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="133-Cp-4rO" id="K2S-BI-Cui">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
@@ -145,8 +149,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Notify on Days" id="vIM-aD-AwL">
+                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ECG-3O-bMe">
-                                        <rect key="frame" x="0.0" y="206" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="353" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ECG-3O-bMe" id="6Tw-DZ-2If">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -238,13 +246,13 @@
                     <connections>
                         <outlet property="notificationsSwitch" destination="677-b0-Ju3" id="uQn-PS-Xqs"/>
                         <outlet property="pickerView" destination="0Mq-Ee-sia" id="otR-HK-xpc"/>
-                        <outletCollection property="dayButtons" destination="qWL-I4-jfA" collectionClass="NSMutableArray" id="Jgd-B3-eBI"/>
-                        <outletCollection property="dayButtons" destination="D24-re-eU0" collectionClass="NSMutableArray" id="u9b-MC-2IS"/>
-                        <outletCollection property="dayButtons" destination="56B-Mp-w5v" collectionClass="NSMutableArray" id="kTc-9i-ifQ"/>
                         <outletCollection property="dayButtons" destination="mAw-Km-Eg6" collectionClass="NSMutableArray" id="IIK-D5-3gK"/>
-                        <outletCollection property="dayButtons" destination="2GR-LH-INg" collectionClass="NSMutableArray" id="ntD-1F-e7K"/>
-                        <outletCollection property="dayButtons" destination="c5n-q7-mRM" collectionClass="NSMutableArray" id="aw6-mp-rbY"/>
+                        <outletCollection property="dayButtons" destination="qWL-I4-jfA" collectionClass="NSMutableArray" id="Jgd-B3-eBI"/>
                         <outletCollection property="dayButtons" destination="Fwx-jj-UyE" collectionClass="NSMutableArray" id="Ngo-lT-26X"/>
+                        <outletCollection property="dayButtons" destination="c5n-q7-mRM" collectionClass="NSMutableArray" id="aw6-mp-rbY"/>
+                        <outletCollection property="dayButtons" destination="2GR-LH-INg" collectionClass="NSMutableArray" id="ntD-1F-e7K"/>
+                        <outletCollection property="dayButtons" destination="56B-Mp-w5v" collectionClass="NSMutableArray" id="kTc-9i-ifQ"/>
+                        <outletCollection property="dayButtons" destination="D24-re-eU0" collectionClass="NSMutableArray" id="u9b-MC-2IS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6F9-1t-rYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
