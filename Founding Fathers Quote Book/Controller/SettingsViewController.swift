@@ -35,6 +35,10 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         static let RowHeight: CGFloat = 30.0
     }
     
+    private enum Settings: String {
+        case notificationsOn, hourIndex, minutesIndex, isAm, notifyDays
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var notificationsSwitch: UISwitch!
@@ -53,14 +57,35 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        restoreSettings()
         updateUI()
     }
     
     // MARK: - Helpers
     
+    private func restoreSettings() {
+        let defaults = UserDefaults.standard
+        
+        if let days = defaults.array(forKey: Settings.notifyDays.rawValue) as? [Bool] {
+            notifyDays = days
+            notificationsOn = defaults.bool(forKey: Settings.notificationsOn.rawValue)
+            hourIndex = defaults.integer(forKey: Settings.hourIndex.rawValue)
+            minutesIndex = defaults.integer(forKey: Settings.minutesIndex.rawValue)
+            isAm = defaults.bool(forKey: Settings.isAm.rawValue)
+        }
+    }
+
     private func saveSettings() {
-        // NEEDSWORK: do it
+        let defaults = UserDefaults.standard
+        
+        defaults.set(notificationsOn, forKey: Settings.notificationsOn.rawValue)
+        defaults.set(hourIndex, forKey: Settings.hourIndex.rawValue)
+        defaults.set(minutesIndex, forKey: Settings.minutesIndex.rawValue)
+        defaults.set(isAm, forKey: Settings.isAm.rawValue)
+        defaults.set(notifyDays, forKey: Settings.notifyDays.rawValue)
+        
+        defaults.synchronize()
     }
 
     private func updateUI() {
