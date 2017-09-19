@@ -15,6 +15,7 @@
 		3F291EDE1F6999BE0058DCEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F291EDC1F6999BE0058DCEC /* LaunchScreen.storyboard */; };
 		3F291EE71F699FB90058DCEC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F291EE61F699FB90058DCEC /* WebKit.framework */; };
 		3F291EE91F699FFE0058DCEC /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */; };
+		3F3C5C791F71D751007047AA /* RotatingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C5C781F71D751007047AA /* RotatingNavigationController.swift */; };
 		3F82B5761F6AEC1D00DAF8EE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F82B5751F6AEC1D00DAF8EE /* Quote.swift */; };
 		3F82B5781F6AED2800DAF8EE /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F82B5771F6AED2800DAF8EE /* QuoteDeck.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		3F291EDF1F6999BE0058DCEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F291EE61F699FB90058DCEC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
+		3F3C5C781F71D751007047AA /* RotatingNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingNavigationController.swift; sourceTree = "<group>"; };
 		3F82B5751F6AEC1D00DAF8EE /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		3F82B5771F6AED2800DAF8EE /* QuoteDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3F291EE81F699FFE0058DCEC /* QuoteViewController.swift */,
+				3F3C5C781F71D751007047AA /* RotatingNavigationController.swift */,
 				3F1D5C161F6B38F100290697 /* SettingsViewController.swift */,
 				3F1A20B31F6AF384003CFFBB /* TopicsViewController.swift */,
 			);
@@ -196,6 +199,7 @@
 				3F82B5761F6AEC1D00DAF8EE /* Quote.swift in Sources */,
 				3F291ED41F6999BE0058DCEC /* AppDelegate.swift in Sources */,
 				3F1A20B41F6AF384003CFFBB /* TopicsViewController.swift in Sources */,
+				3F3C5C791F71D751007047AA /* RotatingNavigationController.swift in Sources */,
 				3F82B5781F6AED2800DAF8EE /* QuoteDeck.swift in Sources */,
 				3F1D5C171F6B38F100290697 /* SettingsViewController.swift in Sources */,
 			);

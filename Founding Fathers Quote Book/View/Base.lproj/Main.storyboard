@@ -260,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="2058" y="132"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Rotating Navigation Controller-->
         <scene sceneID="NIT-9k-tWK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g3B-Tk-tNi" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g3B-Tk-tNi" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B4K-3W-kxq">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -327,10 +327,10 @@
             </objects>
             <point key="canvasLocation" x="1273" y="884"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Rotating Navigation Controller-->
         <scene sceneID="TV4-TE-slQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Erp-PF-oEC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Erp-PF-oEC" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="va0-in-GgT">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -345,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="478.39999999999998" y="883.74384236453204"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Rotating Navigation Controller-->
         <scene sceneID="gke-6N-gno">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Ve-j0-4wZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Ve-j0-4wZ" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="llw-z6-Y8H">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
