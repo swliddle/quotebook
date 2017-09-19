@@ -106,7 +106,7 @@ class QuoteViewController : UIViewController {
             title = Storyboard.QuoteOfTheDayTitle
         }
 
-        webView.loadHTMLString(currentQuote.htmlPage(), baseURL: nil)
+        webView.loadHTMLString(currentQuote.html, baseURL: nil)
     }
 
     private func updateUIByToggling() {
