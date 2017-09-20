@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SettingsViewController : UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -23,15 +24,31 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         static let AmPm = 2
     }
     
+    private struct NotificationContent {
+        static let body = "Read advice from our Founding Fathers."
+        static let identifier = "edu.byu.ffqb"
+        static let subtitle = "Quote of the Day"
+        static let title = "Founding Fathers"
+    }
+    
+    private struct NotificationAlert {
+        static let buttonLabel = "OK"
+        static let message = """
+                        To allow this app to remind you of the quote of the day, please go to the
+                        Settings app and enable notifications for the Quotes app.
+                        """
+        static let title = "Notifications Are Disabled"
+    }
+    
     private struct Picker {
         static let AmPmCount = 2
         static let AM = "AM"
         static let ComponentWidth: CGFloat = 50.0
         static let InitialHourIndex = 6
-        static let MinutesPerGroup = 5
+        static let MinutesPerGroup = 1
         static let NoonIndex = 11
         static let NumberOfHours = 12
-        static let NumberOfMinuteElements = 12
+        static let NumberOfMinuteElements = 60
         static let PM = "PM"
         static let RowHeight: CGFloat = 30.0
         static let WheelFactor = 5000
@@ -60,12 +77,30 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        checkNotificationPermissions()
         restoreSettings()
         updateUI()
     }
     
     // MARK: - Helpers
     
+    private func checkNotificationPermissions() {
+        UNUserNotificationCenter.current().getNotificationSettings() {
+            settings in
+            
+            if settings.authorizationStatus != .authorized {
+                let alertController = UIAlertController(title: NotificationAlert.title,
+                                                        message: NotificationAlert.message,
+                                                        preferredStyle: .alert)
+                
+                alertController.addAction(UIAlertAction(title: NotificationAlert.buttonLabel,
+                                                        style: .default,
+                                                        handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
+
     private func indexForSelection(_ row: Int, inComponent component: Int) -> Int {
         let rowCount = component == Component.Hours ?
                                     Picker.NumberOfHours :
@@ -80,6 +115,32 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         return row % rowCount
     }
 
+    private func registerNotifications() {
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+
+        if notificationsOn {
+            let content = UNMutableNotificationContent()
+            
+            content.title = NotificationContent.title
+            content.subtitle = NotificationContent.subtitle
+            content.body = NotificationContent.body
+            
+            var components = DateComponents()
+            
+            components.hour = hourIndex + 1 +
+                (isAm || hourIndex == Picker.NoonIndex ? 0 : Picker.NumberOfHours)
+            components.minute = minutesIndex * Picker.MinutesPerGroup
+            
+            let trigger = UNCalendarNotificationTrigger.init(dateMatching: components, repeats: true)
+            
+            UNUserNotificationCenter.current().add(
+                UNNotificationRequest(identifier: NotificationContent.identifier,
+                                      content: content,
+                                      trigger: trigger))
+        }
+    }
+    
     private func restoreSettings() {
         let defaults = UserDefaults.standard
         
@@ -102,6 +163,7 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
         defaults.set(notifyDays, forKey: Settings.notifyDays.rawValue)
         
         defaults.synchronize()
+        registerNotifications()
     }
 
     private func updateUI() {
@@ -122,6 +184,11 @@ class SettingsViewController : UITableViewController, UIPickerViewDataSource, UI
     
     @IBAction func toggleNotifications(_ sender: UISwitch) {
         notificationsOn = sender.isOn
+        
+        if notificationsOn {
+            checkNotificationPermissions()
+        }
+
         saveSettings()
     }
     
