@@ -57,7 +57,20 @@ class QuoteDeck {
                         goal; nothing on earth can help the man with the wrong mental attitude.
                     """,
               speaker: "Thomas Jefferson",
-              tags: [ "attitude", "achieving", "goal" ])
+              tags: [ "attitude", "achieving", "goal" ]),
+        Quote(text: """
+                        All of us who were engaged in the struggle must have observed frequent
+                        instances of superintending providence in our favor. To that kind
+                        providence we owe this happy opportunity of consulting in peace on the
+                        means of establishing our future national felicity. And have we now
+                        forgotten that powerful friend? Or do we imagine that we no longer need his
+                        assistance? I have lived, Sir, a long time, and the longer I live, the more
+                        convincing proofs I see of this truth-that God governs in the affairs of
+                        men. And if a sparrow cannot fall to the Ground without his Notice, is it
+                        probable that an Empire can rise without his Aid?
+                    """,
+              speaker: "Benjamin Franklin",
+              tags: [ "religion", "providence" ])
     ]
 
     // MARK: - Singleton pattern
