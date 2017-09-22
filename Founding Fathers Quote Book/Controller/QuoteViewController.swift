@@ -156,7 +156,6 @@ class QuoteViewController : UIViewController {
             navigationItem.title = "\(currentTopic.capitalized) (\(currentQuoteIndex + 1) of \(quotes.count))"
         }
         
-        print("toggleQuote('\(quote.text)', '\(quote.speaker)')")
         webView.evaluateJavaScript("toggleQuote('\(quote.text)', '\(quote.speaker)')",
             completionHandler: nil)
     }
