@@ -19,8 +19,8 @@ class Quote {
     // MARK: - Initialization
     
     init(text: String, speaker: String, tags: [String]) {
-        self.text = text
-        self.speaker = speaker
+        self.text = Quote.safeString(text)
+        self.speaker = Quote.safeString(speaker)
         self.tags = tags
     }
 
@@ -79,5 +79,12 @@ class Quote {
                 </body>
                 </html>
                 """
+    }
+    
+    // MARK: - Helpers
+    
+    private static func safeString(_ string: String) -> String {
+        return string.trimmingCharacters(in: .whitespacesAndNewlines)
+                     .replacingOccurrences(of: "\n", with: " ")
     }
 }

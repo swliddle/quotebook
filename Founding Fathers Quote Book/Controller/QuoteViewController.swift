@@ -13,6 +13,11 @@ class QuoteViewController : UIViewController {
     
     // MARK: - Constants
     
+    private struct Key {
+        static let CurrentQuoteIndex = "CurrentQuoteIndex"
+        static let Topic = "Topic"
+    }
+    
     private struct Storyboard {
         static let QuoteOfTheDayTitle = "Quote of the Day"
         static let ShowTopicsSegueIdentifier = "ShowTopics"
@@ -36,14 +41,35 @@ class QuoteViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configure()
+        configure(updatingCurrentIndex: true)
+    }
+    
+    // MARK: - State restoration
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        
+        currentQuoteIndex = coder.decodeInteger(forKey: Key.CurrentQuoteIndex)
+        
+        if let savedTopic = coder.decodeObject(forKey: Key.Topic) as? String {
+            topic = savedTopic
+        }
+        
+        configure(updatingCurrentIndex: false)
+    }
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        
+        coder.encode(currentQuoteIndex, forKey: Key.CurrentQuoteIndex)
+        coder.encode(topic, forKey: Key.Topic)
     }
     
     // MARK: - Actions
     
     @IBAction func showQuoteOfTheDay() {
         topic = nil
-        configure()
+        configure(updatingCurrentIndex: true)
     }
     
     @IBAction func swipe(_ sender: UISwipeGestureRecognizer) {
@@ -83,13 +109,19 @@ class QuoteViewController : UIViewController {
         }
     }
 
-    private func configure() {
+    private func configure(updatingCurrentIndex needsUpdate: Bool) {
         if let currentTopic = topic {
             quotes = QuoteDeck.sharedInstance.quotesForTag(currentTopic)
-            currentQuoteIndex = 0
+            
+            if needsUpdate {
+                currentQuoteIndex = 0
+            }
         } else {
             quotes = QuoteDeck.sharedInstance.quotes
-            chooseQuoteOfTheDay()
+            
+            if needsUpdate {
+                chooseQuoteOfTheDay()
+            }
         }
 
         updateUI()
@@ -124,6 +156,7 @@ class QuoteViewController : UIViewController {
             navigationItem.title = "\(currentTopic.capitalized) (\(currentQuoteIndex + 1) of \(quotes.count))"
         }
         
+        print("toggleQuote('\(quote.text)', '\(quote.speaker)')")
         webView.evaluateJavaScript("toggleQuote('\(quote.text)', '\(quote.speaker)')",
             completionHandler: nil)
     }
@@ -135,6 +168,6 @@ class QuoteViewController : UIViewController {
     }
     
     @IBAction func showTopicQuotes(_ segue: UIStoryboardSegue) {
-        configure()
+        configure(updatingCurrentIndex: true)
     }
 }
