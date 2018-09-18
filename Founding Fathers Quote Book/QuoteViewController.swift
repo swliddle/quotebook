@@ -155,7 +155,7 @@ class QuoteViewController : UIViewController {
             let fadeTextAnimation = CATransition()
 
             fadeTextAnimation.duration = 0.75
-            fadeTextAnimation.type = kCATransitionFade
+            fadeTextAnimation.type = CATransitionType.fade
             
             navigationController?.navigationBar.layer.add(fadeTextAnimation, forKey: "fadeText")
             navigationItem.title = "\(topicFilter.capitalized) (\(currentQuoteIndex + 1) of \(quotes.count))"
